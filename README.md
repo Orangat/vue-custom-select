@@ -12,7 +12,7 @@ $ npm i vue-custom-select
 In your component:
 
 ```javascript
-import vueCustomSelect from 'vuecustomselect/src/CustomSelect.vue';
+import vueCustomSelect from 'vue-custom-select/src/CustomSelect.vue';
 
 export default {
   components: {
@@ -25,7 +25,8 @@ export default {
 Globally:
 
 ```javascript
-import vueCustomSelect from "vue-custom-select";
+import Vue from 'vue';
+import vueCustomSelect from "vue-custom-select/src/CustomSelect.vue";
 Vue.component('vue-custom-select', vueCustomSelect);
 ```
 
