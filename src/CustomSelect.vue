@@ -63,6 +63,9 @@
       document.documentElement.removeEventListener('click', this.outsideClick, false)
     },
     methods: {
+      handleInput (e) {
+        this.$emit('input', this.selectValue)
+      },
       showOptions () {
         this.inputValue = ''
         this.focused = true
@@ -75,10 +78,12 @@
       selectOption (option) {
         this.selectValue = option
         this.inputValue = option.text
+        this.handleInput()
         this.hideOptions()
       },
       outsideClick (e) {
         if (!this.$el.contains(e.target)) {
+          this.handleInput()
           this.hideOptions()
         }
       }

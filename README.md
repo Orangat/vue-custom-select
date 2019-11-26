@@ -4,7 +4,6 @@
 
 * Small size (~4kb)
 * SSR Support
-* Vuex Support
 * Zero dependencies
 * Minimalistic
 * Convenient and easy to use
@@ -42,10 +41,12 @@ Vue.component('vue-custom-select', vueCustomSelect);
 
 ```html
 <vue-custom-select 
+  v-model="selectedOption"
   :data-array="dataArray"
   placeholder="Choose your country">
 </vue-custom-select>
 ```
+use v-model to get the selected option
 
 ### Data array must be something like this:
 ```javascript
