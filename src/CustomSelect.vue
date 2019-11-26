@@ -149,6 +149,7 @@
     max-height: 50vh;
     overflow: auto;
     transition: all .3s ease;
+    z-index: 10;
   }
 
   .select-item {
