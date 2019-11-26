@@ -37,7 +37,10 @@ Vue.component('vue-custom-select', vueCustomSelect);
   placeholder="Choose your country">
 </vue-custom-select>
 ```
-Data array must be something like this:
+## And you will get result:
+<img style="width: 500px" src="https://raw.githubusercontent.com/orangat/vuecustomselect/master/custom-select.png">
+
+### Data array must be something like this:
 ```javascript
 data () {
     return {
