@@ -99,7 +99,7 @@
     padding: 20px 15px 4px;
     border-radius: 4px;
     transition: all .3s ease;
-    z-index: 1;
+    z-index: 5;
     width: 100%;
     height: 100%;
   }
@@ -137,7 +137,7 @@
     pointer-events: none;
     transition: all .3s ease;
     margin-top: -12px;
-    z-index: 2;
+    z-index: 6;
   }
 
   .placeholder.is-focus {
@@ -156,7 +156,7 @@
     max-height: 50vh;
     overflow: auto;
     transition: all .3s ease;
-    z-index: 10;
+    z-index: 4;
   }
 
   .select-item {

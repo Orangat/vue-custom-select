@@ -59,6 +59,16 @@ where the key 'text' will be a title of your options
 ### And you will get a result:
 <img style="width: 500px" src="https://raw.githubusercontent.com/orangat/vue-custom-select/master/custom-select.png">
 
+### Customize CSS
+If you don't like styles, you can customize it just using selector /deep/, for example:
+
+```css
+.your-wrap-class /deep/ .select-input {
+    background: lightblue;
+}
+```
+where "your-wrap-class" it's parent class in your code 
+
 ### Available Props:
 ```javascript
 props: {

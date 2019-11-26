@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-select",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/vuecustomselect.umd.js",
   "module": "dist/vuecustomselect.esm.js",
   "unpkg": "dist/vuecustomselect.min.js",
@@ -34,5 +34,18 @@
     "rollup-plugin-vue": "^4.7.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "keywords": [
+    "vue",
+    "js",
+    "select",
+    "dropdown",
+    "filter-select",
+    "vue-dropdown",
+    "options",
+    "vue-select",
+    "vue-custom-select",
+    "vue-input-select",
+    "vue-autocomplete"
+  ]
 }
