@@ -1,6 +1,6 @@
 <template>
   <div class="custom-select" v-bind:style="{'width': `${width}px`, 'height': `${height}px`}">
-    <input v-model="inputValue" @focus="showOptions" :class="[{'is-options-open': focused}, 'select-input']" type="text">
+    <input v-model="inputValue" @focus="showOptions" :class="[{'is-options-open': focused}, {'empty-placeholder': !placeholder}, 'select-input']" type="text">
     <span :class="[{'is-focus': inputValue}, 'placeholder']">{{ placeholder }}</span>
     <transition name="fade" mode="in-out">
       <div v-show="focused" class="options">
@@ -55,6 +55,9 @@
     },
     mounted () {
       document.documentElement.addEventListener('click', this.outsideClick, false)
+      if (this.placeholder.trim() === "") {
+        this.placeholder = false
+      }
     },
     beforeDestroy () {
       document.documentElement.removeEventListener('click', this.outsideClick, false)
@@ -99,6 +102,10 @@
     z-index: 1;
     width: 100%;
     height: 100%;
+  }
+
+  .select-input.empty-placeholder {
+    padding: 5px 15px;
   }
 
   .select-input:focus, .select-input:valid {
