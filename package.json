@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-select",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/vuecustomselect.umd.js",
   "module": "dist/vuecustomselect.esm.js",
   "unpkg": "dist/vuecustomselect.min.js",
