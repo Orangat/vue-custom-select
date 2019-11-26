@@ -37,8 +37,6 @@ Vue.component('vue-custom-select', vueCustomSelect);
   placeholder="Choose your country">
 </vue-custom-select>
 ```
-### And you will get a result:
-<img style="width: 500px" src="https://raw.githubusercontent.com/orangat/vue-custom-select/master/custom-select.png">
 
 ### Data array must be something like this:
 ```javascript
@@ -56,6 +54,9 @@ data () {
   }
 ```
 where the key 'text' will be a title of your options
+
+### And you will get a result:
+<img style="width: 500px" src="https://raw.githubusercontent.com/orangat/vue-custom-select/master/custom-select.png">
 
 ### Available Props:
 ```javascript
