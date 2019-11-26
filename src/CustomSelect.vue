@@ -1,7 +1,7 @@
 <template>
   <div class="custom-select" v-bind:style="{'width': `${width}px`, 'height': `${height}px`}">
     <input v-model="inputValue" @focus="showOptions" :class="[{'is-options-open': focused}, {'empty-placeholder': !placeholder}, 'select-input']" type="text">
-    <span :class="[{'is-focus': inputValue}, 'placeholder']">{{ placeholder }}</span>
+    <span v-if="placeholder" :class="[{'is-focus': inputValue}, 'placeholder']">{{ placeholder }}</span>
     <transition name="fade" mode="in-out">
       <div v-show="focused" class="options">
         <div v-for="(option, i) in filteredOptions" :key="i" @click="selectOption(option)" class="select-item">{{ option.text }}</div>
