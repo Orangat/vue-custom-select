@@ -52,12 +52,12 @@ Vue.component('vue-custom-select', vueCustomSelect);
 data () {
     return {
       dataArray: [
-        {text: 'First option', value: 1},
-        {text: 'Second option', value: 2},
-        {text: 'Third option', value: 3},
-        {text: 'Fourth option', value: 4},
-        {text: 'Fifth option', value: 5},
-        {text: 'Sixth option', value: 4}
+        {text: 'First option', value: 'Any'},
+        {text: 'Second option', value: 'Any'},
+        {text: 'Third option', value: 'Any'},
+        {text: 'Fourth option', value: 'Any'},
+        {text: 'Fifth option', value: 'Any'},
+        {text: 'Sixth option', value: 'Any'}
       ]
     }
   }
