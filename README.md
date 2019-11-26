@@ -2,6 +2,14 @@
 
     simple, minimalistic autocomplete select dropdown component for Vue apps for you!
 
+* Small size (~4kb)
+* SSR Support
+* Vuex Support
+* Zero dependencies
+* Minimalistic
+* Convenient and easy to use
+* Floating placeholder
+
 ### Install Via NPM
 
 ```bash
