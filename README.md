@@ -38,7 +38,7 @@ Vue.component('vue-custom-select', vueCustomSelect);
 </vue-custom-select>
 ```
 ## And you will get a result:
-<img style="width: 500px" src="https://raw.githubusercontent.com/orangat/vuecustomselect/master/custom-select.png">
+<img style="width: 500px" src="https://raw.githubusercontent.com/orangat/vue-custom-select/master/custom-select.png">
 
 ### Data array must be something like this:
 ```javascript
