@@ -1,6 +1,6 @@
 <template>
   <div class="custom-select" v-bind:style="{'width': `${width}px`, 'height': `${height}px`}">
-    <input v-model="inputValue" @focus="showOptions" :class="[{'is-options-open': focused}, {'empty-placeholder': !placeholder}, 'select-input']" type="text">
+    <input @input="handleInput" v-model="inputValue" @focus="showOptions" :class="[{'is-options-open': focused}, {'empty-placeholder': !placeholder}, 'select-input']" type="text">
     <span v-if="placeholder" :class="[{'is-focus': inputValue}, 'placeholder']">{{ placeholder }}</span>
     <transition name="fade" mode="in-out">
       <div v-show="focused" class="options">
@@ -12,6 +12,7 @@
 
 <script>
   export default {
+    prop: ['value'],
     props: {
       dataArray: {
         type: Array,
@@ -32,7 +33,7 @@
     },
     data () {
       return {
-        inputValue: '',
+        inputValue: this.value,
         selectValue: null,
         focused: false
       }
@@ -40,7 +41,7 @@
     computed: {
       filteredOptions () {
         return this.dataArray.filter(option => {
-          if (option.text.toLowerCase().includes(this.inputValue.toLowerCase())) {
+          if (option.text.toLowerCase().includes(this.inputValue)) {
             return option
           }
         })
@@ -64,7 +65,7 @@
     },
     methods: {
       handleInput (e) {
-        this.$emit('input', this.selectValue)
+        this.$emit('input', this.inputValue)
       },
       showOptions () {
         this.inputValue = ''
@@ -78,12 +79,12 @@
       selectOption (option) {
         this.selectValue = option
         this.inputValue = option.text
-        this.handleInput()
+        this.$emit('input', this.selectValue)
         this.hideOptions()
       },
       outsideClick (e) {
         if (!this.$el.contains(e.target)) {
-          this.handleInput()
+          this.$emit('input', this.selectValue)
           this.hideOptions()
         }
       }

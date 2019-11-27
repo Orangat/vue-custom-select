@@ -46,7 +46,7 @@ Vue.component('vue-custom-select', vueCustomSelect);
   placeholder="Choose your country">
 </vue-custom-select>
 ```
-use v-model to get the selected option
+use v-model to get the selected option, or set standard value
 
 ### Data array must be something like this:
 ```javascript
@@ -103,3 +103,8 @@ props: {
   }
 }
 ```
+
+### Github link:
+https://github.com/Orangat/vue-custom-select <br>
+Fill free to create some issue, if you find some bugs, or want to improve something. <br>
+If you have questions, write me 'serg,webdeveloper@gmail.com' 
