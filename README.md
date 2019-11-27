@@ -2,7 +2,7 @@
 
     simple, minimalistic autocomplete select dropdown component for Vue apps for you!
 
-* Small size (~4kb)
+* ~4kb (the component size)
 * SSR Support
 * Zero dependencies
 * Minimalistic
