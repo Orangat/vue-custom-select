@@ -4,7 +4,7 @@
     <span v-if="placeholder" :class="[{'is-focus': inputValue}, 'placeholder']">{{ placeholder }}</span>
     <transition name="fade" mode="in-out">
       <div v-show="focused" class="options">
-        <div v-for="(option, i) in filteredOptions" :key="i" @click="selectOption(option)" class="select-item">{{ option.text }}</div>
+        <div v-for="(option, i) in filteredOptions" :key="i" @click="selectOption(option)" :class="[{'is-searched': option.searched}, 'select-item']">{{ option.text }}</div>
       </div>
     </transition>
   </div>
@@ -33,18 +33,35 @@
     },
     data () {
       return {
-        inputValue: this.value,
+        inputValue: this.$attrs.value.text,
         selectValue: null,
-        focused: false
+        focused: false,
+        searched: false
       }
     },
     computed: {
       filteredOptions () {
-        return this.dataArray.filter(option => {
-          if (option.text.toLowerCase().includes(this.inputValue)) {
-            return option
+        let result = []
+        this.dataArray.forEach((item, i) => {
+          item.searched = false
+          let lowerValue = this.inputValue
+          if (this.inputValue) {
+            lowerValue = this.inputValue.toLowerCase()
+          }
+          if (item.text.toLowerCase().includes(lowerValue)) {
+            if (this.searched && this.inputValue.trim() !== "") {
+              item.searched = true
+            }
+            result.unshift(item)
+          } else {
+            item.searched = false
+            result.push(item)
           }
         })
+        if (this.inputValue) {
+          return result
+        }
+        return result.reverse()
       }
     },
     watch: {
@@ -65,6 +82,8 @@
     },
     methods: {
       handleInput (e) {
+        console.log('input')
+        this.searched = true
         this.$emit('input', this.inputValue)
       },
       showOptions () {
@@ -72,13 +91,16 @@
         this.focused = true
       },
       hideOptions () {
+        this.searched = false
         this.$nextTick(() => {
           this.focused = false
         })
       },
       selectOption (option) {
+        delete option.searched
         this.selectValue = option
         this.inputValue = option.text
+
         this.$emit('input', this.selectValue)
         this.hideOptions()
       },
@@ -173,7 +195,7 @@
     padding: 0 15px;
   }
 
-  .select-item:hover {
+  .select-item.is-searched, .select-item:hover {
     background: #f4fbf8;
   }
 

@@ -46,7 +46,7 @@ Vue.component('vue-custom-select', vueCustomSelect);
   placeholder="Choose your country">
 </vue-custom-select>
 ```
-use v-model to get the selected option, or set standard value
+Use v-model to get the selected option, or set standard value. The standard value must be something like this '{text: 'First option', value: 'Any'}', the 'text' property is required
 
 ### Data array must be something like this:
 ```javascript
