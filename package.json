@@ -1,9 +1,15 @@
 {
   "name": "vue-custom-select",
-  "version": "1.0.9",
-  "main": "dist/vuecustomselect.umd.js",
+  "version": "1.0.10",
+  "main": "src/CustomSelect.vue",
   "module": "dist/vuecustomselect.esm.js",
   "unpkg": "dist/vuecustomselect.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Orangat/vue-custom-select"
+  },
+  "homepage": "https://github.com/Orangat/vue-custom-select#readme",
+  "license": "MIT",
   "browser": {
     "./sfc": "src/vuecustomselect.vue"
   },
