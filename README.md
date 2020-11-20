@@ -107,4 +107,4 @@ props: {
 ### Github link:
 https://github.com/Orangat/vue-custom-select <br>
 Fill free to create some issue, if you find some bugs, or want to improve something. <br>
-If you have questions, write me 'serg,webdeveloper@gmail.com' 
+If you have questions, write me 'serg.webdeveloper@gmail.com' 
